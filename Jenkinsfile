@@ -25,16 +25,16 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo 'Lazımi asılılıqları quraşdırır...'
-                script {
+                echo 'Pytest sistemdə quraşdırılıb...'
+                // script {
                     // 1. Virtual mühiti yaradırıq (adətən 'venv' adlı bir qovluqda)
-                    sh 'python3 -m venv venv'
+                    // sh 'python3 -m venv venv'
                     // 2. Virtual mühiti aktivləşdiririk (Python və pip əmrləri artıq bu mühitdə işləyəcək)
                     // Jenkinsfile-da `sh` istifadə edərkən aktivləşdirmə bir qədər fərqli olur.
                     // Biz birbaşa virtual mühitin içindəki python/pip-i çağıracağıq.
-                    sh 'venv/bin/python3 -m pip install --upgrade pip' // pip-i yeniləyirik
-                    sh 'venv/bin/python3 -m pip install pytest' // pytest-i quraşdırırıq
-                }
+                    // sh 'venv/bin/python3 -m pip install --upgrade pip' // pip-i yeniləyirik
+                    // sh 'venv/bin/python3 -m pip install pytest' // pytest-i quraşdırırıq
+                // }
             }
         }
 
@@ -44,7 +44,7 @@ pipeline {
                 script {
                     try {
                         // Testləri virtual mühitdəki python ilə işlədirik
-                        sh 'venv/bin/python3 -m pytest test_main.py'
+                        sh 'python3 -m pytest test_main.py'
                         echo 'Bütün testlər uğurla keçdi!'
                     } catch (err) {
                         echo "Testlər uğursuz oldu: ${err}"
