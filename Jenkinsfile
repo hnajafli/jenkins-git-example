@@ -1,7 +1,7 @@
 pipeline {
     agent any // Pipeline-ın istənilən mövcud agentdə işləməsinə icazə verir
 
-    tools {
+   // tools {
         // Bu, Jenkins agentində Python-un olması lazım olduğunu göstərir.
         // Əgər Jenkins agentinizdə Python yoxdursa, aşağıdakı addımı yerinə yetirməlisiniz:
         // Manage Jenkins -> Tools -> Python installations -> Add Python
@@ -10,7 +10,7 @@ pipeline {
         // Əgər agentinizdə Python əvvəldən quraşdırılıbsa və PATH-dadırsa, bu hissəyə ehtiyac qalmır.
         // Bizim halımızda Ubuntu VM-də Python var, o yüzden bu sətirlərə ehtiyac qalmaya bilər.
         // python 'Python3' // Misal üçün
-    }
+    // }
 
     stages {
         stage('Checkout Code') {
