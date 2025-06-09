@@ -19,7 +19,7 @@ pipeline {
                 // Bu addım "Pipeline script from SCM" seçildiyi üçün avtomatik olaraq işləyir.
                 // Lakin, adətən explicit olaraq scm checkout etmək daha yaxşıdır.
                 // Aşağıdakı əmr, pipeline-ın quraşdırıldığı Git deposunu çəkməsini təmin edir.
-                git branch: 'main', url: 'https://github.com/sizin_hesabınız/jenkins-git-example.git'
+                git branch: 'main', url: 'https://github.com/hnajafli/jenkins-git-example.git'
             }
         }
 
